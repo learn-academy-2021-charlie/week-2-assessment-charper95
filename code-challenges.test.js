@@ -1,5 +1,8 @@
 // ASSESSMENT 2: Coding practical questions with Jest
 
+const { expect } = require("@jest/globals")
+const { describe } = require("yargs")
+
 // Please read all questions thoroughly
 // All problems can be solved with concepts covered in class or in the syllabus
 // Pseudo coding is REQUIRED
@@ -16,7 +19,31 @@
 
 // --------------------1) Create a function that takes a number as an argument and decides if the number is evenly divisble by three or not.
 
+// Create a function called divThree
+// That takes a number as an argument for the input
+const divThree = (number) => {
+// On the condition if the number is evenly divisble by three
+    if (number % 3 === 0){
+// Return an interpolated string "number is divisible by three"
+        return `${number} is divisible by three`
+    } else {
+// or not
+        return `${number} is not divisible by three`
+    }
+}
+
 // a) Create a test with expect statements for each of the variables provided.
+
+// Describe the name of the function - divThree
+describe("divThree", () => {
+// Test what the function does - decides if a given number is evenly divisble by three or not
+    it("decides if a given number is evenly divisble by three or not", () => {
+// Expect the output of the function to be equal to the correct output - output of divThree to equal `${number} is divisible by three` or `${number} is not divisible by three`
+        expect(divThree(true)).toEqual(`${number} is divisible by three`)
+        expect(divThree(false)).toEqual(`${number} is not divisible by three`)
+    }
+}
+
 
 var num1 = 15
 // Expected output: "15 is divisible by three"
